@@ -24,14 +24,14 @@ const handlerNotFound = (request,response) => {
 
 const handlerGetAllJokes = (request,response) => {
 	const statusCode = 200;
-	response.writeHead(statusCode, {'Content-Type' : 'application/json', 'Access-Control-Allow-Origin:' : '*'});
+	response.writeHead(statusCode, {'Content-Type' : 'application/json', 'Access-Control-Allow-Origin' : '*'});
 	response.write(JSON.stringify(jokesArray));
 	response.end();
 }
 
 const handlerGetRandomJoke = (request,response) => {
 	const statusCode = 200;
-	response.writeHead(statusCode, {'Content-Type' : 'application/json', 'Access-Control-Allow-Origin:' : '*'});
+	response.writeHead(statusCode, {'Content-Type' : 'application/json', 'Access-Control-Allow-Origin' : '*'});
 	let joke = jokesArray[Math.floor(Math.random() * Math.floor(jokesArray.length))];
 	response.write(JSON.stringify(joke));
 	response.end();
